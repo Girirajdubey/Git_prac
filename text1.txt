@@ -1,2 +1,61 @@
 This is my text  for learning git 
 this line is modified after git commit 
+
+
+learning git 
+/////////////////////////////////
+PS E:\github> cd one
+PS E:\github\one> git add .
+PS E:\github\one> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   text1.txt
+        new file:   text2.txt
+
+PS E:\github\one> git commit -m  "first commit"
+[master (root-commit) a6d452c] first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 text1.txt
+ create mode 100644 text2.txt
+PS E:\github\one> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   text1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS E:\github\one> git add text1
+fatal: pathspec 'text1' did not match any files
+PS E:\github\one> git add text1.txt 
+PS E:\github\one> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   text1.txt
+
+PS E:\github\one> git commit -m" modifing text1.txt"
+[master fe00dde]  modifing text1.txt
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS E:\github\one> git log 
+commit fe00dde62c77c6cdedd99860c292df2b898ab8dc (HEAD -> master)
+Author: Dipanjon Dubey <115858630+Girirajdubey@users.noreply.github.com>
+Date:   Mon Dec 23 19:28:48 2024 +0530
+
+     modifing text1.txt
+
+commit a6d452c81c28a3b163862f7325eaad82af89dec1
+Author: Dipanjon Dubey <115858630+Girirajdubey@users.noreply.github.com>
+Date:   Mon Dec 23 19:26:39 2024 +0530
+
+    first commit
+PS E:\github\one> git log --online
+fatal: unrecognized argument: --online
+PS E:\github\one> git log --oneline
+fe00dde (HEAD -> master)  modifing text1.txt
+a6d452c first commit
+PS E:\github\one> 
